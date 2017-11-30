@@ -21,17 +21,31 @@ Aurelia Plus is a collection of common use case tools for use in Aurelia applica
   - [Decorators](#decorators)
   - [Functions](#functions)
 
-# installation
+# Installation
 
-# usage
+# Usage
 
-? tabs
-? modal
-? select
-## Upload: https://gist.run/?id=5c37d792a85129617d312993c37fe6fd
+## Upload Custom Element
 
-## type="number": https://gist.run/?id=56155adb6abcb9cb8ef64f3e3138eb78
-? confirmvalue converters
+The native html `<input type="file" />` element looks like a button, but it has quirky behavior and doesn't behave like a normal button. The upload custom element adds an `<upload>` element that looks and behaves like a button, but opens file select dialog. 
+
+### Bindings
+
+- **file** [Default: two-way] The selected file.
+
+### Examples 
+
+```html
+<upload file.bind="file1">Upload</upload>
+<upload class="btn ${file2 ? 'btn-success' : 'btn-primary'}" style="margin-left: 4px;" file.bind="file2">Upload</upload>
+<upload file.bind="file3">Upload</upload><span if.bind="file3"> ${file3.name} selected</span>
+```
+
+Working examples: https://gist.run/?id=5c37d792a85129617d312993c37fe6fd
+
+## Type="number" Custom Attribute
+
+Working examples: https://gist.run/?id=56155adb6abcb9cb8ef64f3e3138eb78
 
 ## filter
 ## sort
