@@ -25,34 +25,21 @@ Aurelia Plus is a collection of common use case tools for use in Aurelia applica
 
 # usage
 
-## custom elements
+## Upload: https://gist.run/?id=5c37d792a85129617d312993c37fe6fd
 
-? tabs
-? modal
-? select
-### Upload: https://gist.run/?id=5c37d792a85129617d312993c37fe6fd
+## type="number": https://gist.run/?id=56155adb6abcb9cb8ef64f3e3138eb78
 
-## custom attributes
+## filter
+## sort
+## number
+## json
+## date/time
+## split
 
-### type="number": https://gist.run/?id=56155adb6abcb9cb8ef64f3e3138eb78
-? confirm
-
-## value converters
-
-### filter
-### sort
-### number
-### json
-### date/time
-### split
-
-## view engine hooks
-
-### Globals: https://gist.run/?id=040775f06aba5e955afd362ee60863aa
+## JavaScript Globals (View Engine Hooks)
 
 This view engine hook adds the JavaScript globals `Array`, `Object`, `JSON`, `Date`, `Math`, `Number`, `RegExp`, and `Reflect` to the view, giving an development experience closer to a JavaScript console.
 
-#### 
 ```html
 <require from="aurelia-plus/globals-view-engine-hooks></require>
 
@@ -71,17 +58,11 @@ This view engine hook adds the JavaScript globals `Array`, `Object`, `JSON`, `Da
 <div if.bind="!RegExp('bad').test(obj4)">This is also good.</div>
 ```
 
-Working examples: https://gist.run/?id=040775f06aba5e955afd362ee60863aa
+Working example: https://gist.run/?id=040775f06aba5e955afd362ee60863aa
 
-## binding behaviors
-
-### refresh: https://gist.run/?id=91c1f815f3df0ca78356a23facc769b2
-
-## decorators
+## refresh: https://gist.run/?id=91c1f815f3df0ca78356a23facc769b2
 
 ? log
-
-## other modules
 
 ? event dispatch
 
