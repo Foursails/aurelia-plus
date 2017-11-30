@@ -25,9 +25,13 @@ Aurelia Plus is a collection of common use case tools for use in Aurelia applica
 
 # usage
 
+? tabs
+? modal
+? select
 ## Upload: https://gist.run/?id=5c37d792a85129617d312993c37fe6fd
 
 ## type="number": https://gist.run/?id=56155adb6abcb9cb8ef64f3e3138eb78
+? confirmvalue converters
 
 ## filter
 ## sort
@@ -36,12 +40,14 @@ Aurelia Plus is a collection of common use case tools for use in Aurelia applica
 ## date/time
 ## split
 
-## JavaScript Globals (View Engine Hooks)
+## Globals
 
 This view engine hook adds the JavaScript globals `Array`, `Object`, `JSON`, `Date`, `Math`, `Number`, `RegExp`, and `Reflect` to the view, giving an development experience closer to a JavaScript console.
 
+### Examples
+
 ```html
-<require from="aurelia-plus/globals-view-engine-hooks"></require>
+<require from="aurelia-plus/globals-view-engine-hooks></require>
 
 <div repeat.for="key of Object.keys(obj1)">
   Obj1['${key}']: ${obj1[key]}
@@ -58,14 +64,33 @@ This view engine hook adds the JavaScript globals `Array`, `Object`, `JSON`, `Da
 <div if.bind="!RegExp('bad').test(obj4)">This is also good.</div>
 ```
 
-Working example: https://gist.run/?id=040775f06aba5e955afd362ee60863aa
+Working examples: https://gist.run/?id=040775f06aba5e955afd362ee60863aa
 
-## refresh: https://gist.run/?id=91c1f815f3df0ca78356a23facc769b2
+## Refresh Binding Behavior
 
-? log
+This binding behavior forces the view to refresh. This is useful when you want to display data that Aurelia doesn't know how to observe, such as functions of arbitrary objects or non-configurable properties.
 
-? event dispatch
+### Parameters
 
-TODO:
-- configure for jspm
-- set dist as default folder to load from (?)
+**Refresh Rate** [Default: 100ms] 
+
+Specifies how often the view should be updated. The default is 100ms.
+
+### Examples
+
+```html
+<div>
+  <b>60 fps</b>
+  <pre>${JSON.stringify(rapidlyChangingObject) & refresh: 16}</pre>
+</div>
+<div>
+  <b>10 fps (default):</b>
+  <pre>${JSON.stringify(normalObject) & refresh}</pre>
+</div>
+<div>
+  <b>5 fps:</b>
+  <pre>${JSON.stringify(extremelyLargeObject) & refresh:1000}</pre>
+</div> 
+```
+
+Working examples: https://gist.run/?id=91c1f815f3df0ca78356a23facc769b2
