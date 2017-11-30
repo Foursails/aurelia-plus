@@ -53,7 +53,8 @@ export function configure(aurelia) {
 The module name for each component is listed below.
 
 ## Upload Custom Element 
-*aurelia-plus/upload-custom-element*
+
+**Module Name**: *aurelia-plus/upload-custom-element*
 
 The native html `<input type="file" />` element looks like a button, but it has quirky behavior and doesn't behave like a normal button. The upload custom element adds an `<upload>` element that looks and behaves like a button, but opens file select dialog. 
 
