@@ -21,7 +21,39 @@ Aurelia Plus is a collection of common use case tools for use in Aurelia applica
 
 # Usage
 
-## Upload Custom Element
+To begin using Aurelia Plus, load the plugin in your Aurelia's main file.
+
+```javascript
+export function configure(aurelia) {
+  aurelia
+    .standardConfiguration()
+    .use('aurelia-plus');
+}
+```
+
+If you'd rather only include specific components, you can instead require those specific components individually.
+
+```html
+<require from="aurelia-plus/upload-custom-element"></require>
+
+<upload file.bind="file">Upload</upload>
+```
+
+You can also select specific components to globalize.
+
+```javascript
+export function configure(aurelia) {
+  aurelia.globalResources([
+    'aurelia-plus/upload-custom-element',
+    'aurelia-plus/filter-value-converter'
+  ]);
+}
+```
+
+The module name for each component is listed below.
+
+## Upload Custom Element 
+*aurelia-plus/upload-custom-element*
 
 The native html `<input type="file" />` element looks like a button, but it has quirky behavior and doesn't behave like a normal button. The upload custom element adds an `<upload>` element that looks and behaves like a button, but opens file select dialog. 
 
