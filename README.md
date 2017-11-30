@@ -41,7 +41,7 @@ Aurelia Plus is a collection of common use case tools for use in Aurelia applica
 This view engine hook adds the JavaScript globals `Array`, `Object`, `JSON`, `Date`, `Math`, `Number`, `RegExp`, and `Reflect` to the view, giving an development experience closer to a JavaScript console.
 
 ```html
-<require from="aurelia-plus/globals-view-engine-hooks></require>
+<require from="aurelia-plus/globals-view-engine-hooks"></require>
 
 <div repeat.for="key of Object.keys(obj1)">
   Obj1['${key}']: ${obj1[key]}
