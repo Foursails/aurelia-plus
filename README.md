@@ -115,9 +115,7 @@ This binding behavior forces the view to refresh. This is useful when you want t
 
 ### Parameters
 
-- **Refresh Rate** [Default: 100ms] 
-
-Specifies how often the view should be refreshed.
+- **Refresh Rate** [Default: 100ms] Specifies how often the view should be refreshed.
 
 ### Examples
 
