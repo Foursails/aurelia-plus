@@ -79,6 +79,8 @@ Specifies how often the view should be refreshed.
 ### Examples
 
 ```html
+<require from="aurelia-plus/refresh-binding-behavior"></require>
+
 <div>
   <b>60 fps</b>
   <pre>${JSON.stringify(rapidlyChangingObject) & refresh: 16}</pre>
