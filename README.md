@@ -6,20 +6,16 @@ Aurelia Plus is a collection of common use case tools for use in Aurelia applica
 
 - [Installation](#installation)
 - [Usage](#usage)
-  - [Custom Elements](#custom-elements)
-    - Upload
-  - [Custom Attributes](#custom-attributes)
-  - [Value Converters](#value-converters)
-    - filter
-    - sort
-    - number
-    - json
-    - date/time
-  - [View Engine Hooks](#view-engine-hooks)
-  - [Binding Behaviors](#binding-behaviors)
-    - Refresh
-  - [Decorators](#decorators)
-  - [Functions](#functions)
+  - [Upload Custom Element](#upload-custom-element)
+  - [Type="number" Custom Attribute](#typenumber-custom-attribute)
+  - [Filter Value Converter](#filter-value-converter)
+  - [Sort Value Converter](#sort-value-converter)
+  - [Number Value Converter](#number-value-converter)
+  - [Json Value Converter](#json-value-converter)
+  - [Date/Time Value Converters](#date/time-value-converters)
+  - [Split Value Converter](#split-value-converter)
+  - [JavaScript Globals](#javascript-globals)
+  - [Refresh Binding Behavior](#refresh-binding-behavior)
 
 # Installation
 
@@ -47,14 +43,14 @@ Working examples: https://gist.run/?id=5c37d792a85129617d312993c37fe6fd
 
 Working examples: https://gist.run/?id=56155adb6abcb9cb8ef64f3e3138eb78
 
-## filter
-## sort
-## number
-## json
-## date/time
-## split
+## Filter Value Converter
+## Sort Value Converter
+## Number Value Converter
+## Json Value Converter
+## Date/Time Value Converters
+## Split Value Converter
 
-## Globals
+## JavaScript Globals
 
 This view engine hook adds the JavaScript globals `Array`, `Object`, `JSON`, `Date`, `Math`, `Number`, `RegExp`, and `Reflect` to the view, giving an development experience closer to a JavaScript console.
 
