@@ -61,6 +61,8 @@ The module name for each component is listed below.
 
 *aurelia-plus/upload-custom-element*
 
+**Module Name**: *aurelia-plus/upload-custom-element*
+
 The native html `<input type="file" />` element looks like a button, but it has quirky behavior and doesn't behave like a normal button. The upload custom element adds an `<upload>` element that looks and behaves like a button, but opens file select dialog. 
 
 ### Bindings
@@ -241,9 +243,7 @@ This binding behavior forces the view to refresh. This is useful when you want t
 
 ### Parameters
 
-- **Refresh Rate (number)** [Default: 100s] 
-
-Specifies how often the view should be refreshed.
+- **Refresh Rate** [Default: 100] Specifies how often the view should be refreshed in ms.
 
 ### Examples
 
