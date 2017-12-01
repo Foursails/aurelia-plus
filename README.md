@@ -197,7 +197,7 @@ time: ${date | time} <!-- 1:58:34 PM -->
 dateTime: ${date | dateTime} <!-- 12/1/2017, 1:58:34 PM -->
 ```
 
-Working examples: https://gist.github.com/davismj/c500e3050c2faecfcf15515a8dc262c5
+Working examples: https://gist.run/?id=c500e3050c2faecfcf15515a8dc262c5
 
 ## Split Value Converter
 
