@@ -59,11 +59,9 @@ The module name for each component is listed below.
 
 ## Upload Custom Element 
 
-*aurelia-plus/upload-custom-element*
-
 **Module Name**: *aurelia-plus/upload-custom-element*
 
-The native html `<input type="file" />` element looks like a button, but it has quirky behavior and doesn't behave like a normal button. The upload custom element adds an `<upload>` element that looks and behaves like a button, but opens file select dialog. 
+The native html `<input type="file" />` element looks like a button, but it has quirky behavior and doesn't behave like a normal button. The upload custom element adds an `<upload>` element that looks and behaves like a button and opens file select dialog. 
 
 ### Bindings
 
@@ -81,9 +79,9 @@ Working examples: https://gist.run/?id=5c37d792a85129617d312993c37fe6fd
 
 ## Type="number" Custom Attribute
 
-*aurelia-plus/type-custom-attribute*
+**Module Name**: *aurelia-plus/type-custom-attribute*
 
-The type="number" custom attribute will automatically return JavaScript number values from HTML number inputs.
+The type custom attribute will automatically return JavaScript number values from HTML type="number" inputs.
 
 ### Examples
 
@@ -95,9 +93,9 @@ Working examples: https://gist.run/?id=56155adb6abcb9cb8ef64f3e3138eb78
 
 ## Filter Value Converter
 
-*aurelia-plus/filter-value-converter*
+**Module Name**: *aurelia-plus/filter-value-converter*
 
-The filter value converter provides a number of tools for filtering arrays.
+The filter value converter provides a number of powerful tools for filtering arrays covering many common use cases.
 
 ### Parameters 
 
@@ -115,7 +113,7 @@ The filter value converter provides a number of tools for filtering arrays.
   - '<=': Matches properties that evaluate to <= searchTerm in JavaScript.
   - '<': Matches properties that evaluate to < searchTerm in JavaScript.
   - '==': Matches properties that evaluate to == searchTerm in JavaScript.
-  - (value, item): boolean: If a function is passed, then it is applied to the value and each item. If it returns true the item is considered a match.
+  - (value, item) => boolean: If a function is passed, then it is applied to the value and each item. If it returns true the item is considered a match.
 
 Full documentation: https://github.com/Foursails/bouncer/blob/master/README.md
 
@@ -143,9 +141,9 @@ Working examples: https://gist.run/?id=17fa796603b79c4904d5535a74ea5a76
 
 ## Number Value Converter
 
-*aurelia-plus/number-value-converter*
+**Module Name**: *aurelia-plus/number-value-converter*
 
-The number value converter returns a JavaScript number from an input. This is identical to the behavior of the upload custom element, but in the form of a value converter.
+The number value converter returns a JavaScript number from an input. This is identical to the behavior of the type custom attribute but in the form of a value converter.
 
 ### Examples
 
@@ -159,17 +157,17 @@ Working examples: https://gist.run/?id=56155adb6abcb9cb8ef64f3e3138eb78
 
 ## JSON Value Converter
 
-*aurelia-plus/json-value-converter*
+**Module Name**: *aurelia-plus/json-value-converter*
 
-The JSON value converter converts the bound value into JSON.
+The JSON value converter converts a value into JSON.
 
 ### Parameters
 
-- **Pretty (bool)** [Default: false] Whether or not to prettify the JSON.
+- **Pretty (boolean)** [Default: false] Whether or not to prettify the JSON.
 
 ## Date/Time Value Converters
 
-*aurelia-plus/date-time-value-converter*
+**Module Name**: *aurelia-plus/date-time-value-converter*
 
 The date/time value converters attempt to parse a value as a Date and return a locale string.
 
@@ -194,13 +192,13 @@ Working examples: https://gist.github.com/davismj/c500e3050c2faecfcf15515a8dc262
 
 ## Split Value Converter
 
-*aurelia-plus/split-value-converter*
+**Module Name**: *aurelia-plus/split-value-converter*
 
-The split value converter is a two way value converter that splits text from the view into an array in the view-model and joins an array from the view-model back into a string in the view. This is particularly useful for search inputs where you may want tokenize a search into parameters.
+The split value converter is a two way value converter that splits text from the view into an array in the view-model and joins an array from the view-model back into a string in the view. This is particularly useful for searching where you may want tokenize an input.
 
 ### Parameters
 
-- **Token (string)** [Default: ' '] Character or text to split the string by.
+- **Token (string)** [Default: ' '] String to split the string by.
 
 ### Examples 
 
@@ -213,37 +211,36 @@ Working examples: https://gist.run/?id=a3f771707b53d4386bff11f17c4d589d
 
 ## JavaScript Globals
 
-This view engine hook adds the JavaScript globals `Array`, `Object`, `JSON`, `Date`, `Math`, `Number`, `RegExp`, and `Reflect` to the view, giving an development experience closer to a JavaScript console.
+**Module Name**: *aurelia-plus/globals-view-engine-hooks*
+
+This view engine hook adds the JavaScript globals `Array`, `Object`, `JSON`, `Date`, `Math`, `Number`, `RegExp`, and `Reflect` to the view giving an development experience closer to a JavaScript console.
 
 ### Examples
 
 ```html
-<require from="aurelia-plus/globals-view-engine-hooks></require>
+<require from="aurelia-plus/globals-view-engine-hooks"></require>
 
-<div repeat.for="key of Object.keys(obj1)">
-  Obj1['${key}']: ${obj1[key]}
-</div>
+<div repeat.for="key of Object.keys(obj1)"></div>
 <div if.bind="!Reflect.has(obj1, 'three')">Three is missing!</div>
 <pre>${JSON.stringify(obj2, null, 2)}</pre>
-<div>${Date()}</div>
-<div>${Reflect.construct(Date, ['2017']).toDateString()}</div>
 <ul if.bind="Array.isArray(obj3)">
   <li repeat.for="item of obj3">${item}</li>
 </ul>
 <p>cos(π/2) = ${Math.cos(Math.PI / 2)} <span if.bind="Math.cos(Math.PI / 2) < Number.EPSILON">≅ 0</span></p>
-<div if.bind="RegExp('good').test(obj4)">This is good.</div>
-<div if.bind="!RegExp('bad').test(obj4)">This is also good.</div>
+<div if.bind="RegExp('good').test(obj4)">Success!</div>
 ```
 
 Working examples: https://gist.run/?id=040775f06aba5e955afd362ee60863aa
 
 ## Refresh Binding Behavior
 
+**Module Name**: *aurelia-plus/refresh-binding-behavior*
+
 This binding behavior forces the view to refresh. This is useful when you want to display data that Aurelia doesn't know how to observe, such as functions of arbitrary objects or non-configurable properties.
 
 ### Parameters
 
-- **Refresh Rate** [Default: 100] Specifies how often the view should be refreshed in ms.
+- **Refresh Rate (number)** [Default: 100] Specifies how often the view should be refreshed in ms.
 
 ### Examples
 
