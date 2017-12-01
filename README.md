@@ -89,7 +89,7 @@ The type custom attribute will automatically return JavaScript number values fro
 <input type="number" value.bind="value" />
 ```
 
-Working examples: https://gist.run/?id=56155adb6abcb9cb8ef64f3e3138eb78
+Working examples: https://gist.run/?id=360c20adf8f0f28597a1c60b58a33afc44
 
 ## Filter Value Converter
 
