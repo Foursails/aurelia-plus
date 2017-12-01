@@ -9,7 +9,6 @@ Aurelia Plus is a collection of common use case tools for use in Aurelia applica
   - [Upload Custom Element](#upload-custom-element)
   - [Type="number" Custom Attribute](#typenumber-custom-attribute)
   - [Filter Value Converter](#filter-value-converter)
-  - [Sort Value Converter](#sort-value-converter)
   - [Number Value Converter](#number-value-converter)
   - [Json Value Converter](#json-value-converter)
   - [Date/Time Value Converters](#date/time-value-converters)
@@ -18,6 +17,12 @@ Aurelia Plus is a collection of common use case tools for use in Aurelia applica
   - [Refresh Binding Behavior](#refresh-binding-behavior)
 
 # Installation
+
+## JSPM
+
+```console
+jspm install aurelia-plus
+```
 
 # Usage
 
@@ -53,6 +58,7 @@ export function configure(aurelia) {
 The module name for each component is listed below.
 
 ## Upload Custom Element 
+
 *aurelia-plus/upload-custom-element*
 
 The native html `<input type="file" />` element looks like a button, but it has quirky behavior and doesn't behave like a normal button. The upload custom element adds an `<upload>` element that looks and behaves like a button, but opens file select dialog. 
@@ -73,14 +79,135 @@ Working examples: https://gist.run/?id=5c37d792a85129617d312993c37fe6fd
 
 ## Type="number" Custom Attribute
 
+*aurelia-plus/type-custom-attribute*
+
+The type="number" custom attribute will automatically return JavaScript number values from HTML number inputs.
+
+### Examples
+
+```html
+<input type="number" value.bind="value" />
+```
+
 Working examples: https://gist.run/?id=56155adb6abcb9cb8ef64f3e3138eb78
 
 ## Filter Value Converter
-## Sort Value Converter
+
+*aurelia-plus/filter-value-converter*
+
+The filter value converter provides a number of tools for filtering arrays.
+
+### Parameters 
+
+- **value (any | any[])** [Required] The value or values to filter with.
+- **on (string | string[])** [Default: `this`] Property or properties to filter on. If no property is given, the filter is performed on the object itself.
+- **strict (boolean)** [Default: false] Specifies whether all values passed to `value` must match. The default behavior is to find any matches.
+- **mode (string | function)** [Default: 'contains'] Specifies what function to use when filtering. Any of the following predefined filters can be referenced by key, or a (value, item) => boolean function can be passed:
+
+  - 'exact': Matches identical strings, ignoring casing.
+  - 'startsWith': Matches strings starting with the search term, ignoring casing.
+  - 'endsWith': Matches strings ending with the search term, ignoring casing.
+  - 'contains': Matches strings containing the search term, ignoring casing.
+  - '>=': Matches properties that evaluate to >= searchTerm in JavaScript.
+  - '>': Matches properties that evaluate to > searchTerm in JavaScript.
+  - '<=': Matches properties that evaluate to <= searchTerm in JavaScript.
+  - '<': Matches properties that evaluate to < searchTerm in JavaScript.
+  - '==': Matches properties that evaluate to == searchTerm in JavaScript.
+  - (value, item): boolean: If a function is passed, then it is applied to the value and each item. If it returns true the item is considered a match.
+
+Full documentation: https://github.com/Foursails/bouncer/blob/master/README.md
+
+### Examples
+
+```html
+<input type="search" value.bind="title" />
+<ul><li repeat.for="game of games | filter: { on: 'title', value: title }">${game.title}/li><ul>
+
+<input type="search" value.bind="name" />
+<input type="checkbox" checked.bind="party" value="Republican" />Republican
+<input type="checkbox" checked.bind="party" value="Democrat" />Democrat
+<input type="date" value.bind="from" />
+<ul>
+  <li repeat.for="president of presidents 
+      | filter: { on: ['first', 'last'], value: name } 
+      | filter: { on: 'party', value: party }
+      | filter: { on: 'start', value: from, mode: '>='">
+    ${president.first} ${president.last}
+  </li>
+</ul>
+```
+
+Working examples: https://gist.run/?id=17fa796603b79c4904d5535a74ea5a76
+
 ## Number Value Converter
-## Json Value Converter
+
+*aurelia-plus/number-value-converter*
+
+The number value converter returns a JavaScript number from an input. This is identical to the behavior of the upload custom element, but in the form of a value converter.
+
+### Examples
+
+```html
+<require from="aurelia-plus/number-value-converter"></require>
+
+<input value.bind="value | number" />
+```
+
+Working examples: https://gist.run/?id=56155adb6abcb9cb8ef64f3e3138eb78
+
+## JSON Value Converter
+
+*aurelia-plus/json-value-converter*
+
+The JSON value converter converts the bound value into JSON.
+
+### Parameters
+
+- **Pretty (bool)** [Default: false] Whether or not to prettify the JSON.
+
 ## Date/Time Value Converters
+
+*aurelia-plus/date-time-value-converter*
+
+The date/time value converters attempt to parse a value as a Date and return a locale string.
+
+### Converters
+
+- **DateValueConverter** Calls `.toLocaleDateString()`.
+
+- **TimeValueConverter** Calls `.toLocaleTimeString()`.
+
+- **DateTimeValueConverter** Calls `.toLocaleString()`.
+
+### Examples
+
+```html
+<input type="datetime-local" value.bind="date" />
+date: ${date | date} <!-- 12/1/2017 -->
+time: ${date | time} <!-- 1:58:34 PM -->
+dateTime: ${date | dateTime} <!-- 12/1/2017, 1:58:34 PM -->
+```
+
+Working examples: https://gist.github.com/davismj/c500e3050c2faecfcf15515a8dc262c5
+
 ## Split Value Converter
+
+*aurelia-plus/split-value-converter*
+
+The split value converter is a two way value converter that splits text from the view into an array in the view-model and joins an array from the view-model back into a string in the view. This is particularly useful for search inputs where you may want tokenize a search into parameters.
+
+### Parameters
+
+- **Token (string)** [Default: ' '] Character or text to split the string by.
+
+### Examples 
+
+```html
+<input type="search" value.bind="searches1 | split" />
+<input type="search" value.bind="searches2 | split: ' OR '" />
+```
+
+Working examples: https://gist.run/?id=a3f771707b53d4386bff11f17c4d589d
 
 ## JavaScript Globals
 
@@ -114,7 +241,7 @@ This binding behavior forces the view to refresh. This is useful when you want t
 
 ### Parameters
 
-- **Refresh Rate** [Default: 100ms] 
+- **Refresh Rate (number)** [Default: 100s] 
 
 Specifies how often the view should be refreshed.
 
