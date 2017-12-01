@@ -165,6 +165,15 @@ The JSON value converter converts a value into JSON.
 
 - **Pretty (boolean)** [Default: false] Whether or not to prettify the JSON.
 
+### Examples 
+
+```html
+<pre repeat.for="state of states">${state | json}</pre>
+<pre>${states | json:true}</pre>
+```
+
+Working examples: https://gist.run/?id=6e25f4da2b04ad2327a7eb4a2917fc78
+
 ## Date/Time Value Converters
 
 **Module Name**: *aurelia-plus/date-time-value-converter*
