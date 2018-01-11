@@ -1,13 +1,15 @@
 {
   "name": "aurelia-plus",
-  "version": "0.2.0-beta",
+  "version": "0.2.1-beta",
   "description": "Aurelia Plus is a collection of common use case tools for use in Aurelia applications.",
   "main": "dist/index.js",
   "directories": {
     "lib": "dist"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rmdir /s dist /q",
+    "build": "tsc && cp src/*.html dist"
   },
   "registry": "npm",
   "format": "amd",
@@ -36,7 +38,7 @@
   "jspm": {
     "main": "index.js",
     "directories": {
-      "lib": "dist"
+      "lib": "dist"s
     }
   }
 }
