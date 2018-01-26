@@ -1,0 +1,1 @@
+module.exports = require("npm:har-validator@5.0.3/lib/promise.js");

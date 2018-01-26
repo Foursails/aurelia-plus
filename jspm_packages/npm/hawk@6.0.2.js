@@ -1,0 +1,1 @@
+module.exports = require("npm:hawk@6.0.2/dist/browser.js");

@@ -1,0 +1,1 @@
+module.exports = require("npm:systemjs-builder@0.15.36/index.js");

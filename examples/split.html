@@ -1,0 +1,10 @@
+<template>
+  <div>
+    <strong>Input:</strong>
+  <input type="search" value.bind="search | split" /> 
+  </div>
+  <div>
+    <strong>Output:</strong>
+    <pre class="d-inline">${search | json}</pre>
+  </div>
+</template>

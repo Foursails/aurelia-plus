@@ -1,0 +1,1 @@
+module.exports = require("npm:nanomatch@1.2.7/index.js");

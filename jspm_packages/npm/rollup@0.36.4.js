@@ -1,0 +1,1 @@
+module.exports = require("npm:rollup@0.36.4/dist/rollup.js");

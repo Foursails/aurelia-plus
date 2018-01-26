@@ -1,0 +1,28 @@
+<template>
+  <h4>Games</h4>
+  <input type="search" placeholder="Filter by Title" value.bind="title & debounce: 200" />
+  <label><input type="checkbox" checked.bind="platforms" value="Super Nintendo Entertainment System" />SNES</label>
+  <label><input type="checkbox" checked.bind="platforms" value="Playstation" />Playstation</label>
+  <ul>
+    <li repeat.for="game of games 
+        | filter: { on: 'title', value: title }
+        | filter: { on: 'platforms', value: platforms, mode: 'exact', update: platforms.length }
+        | filter: { value: random, mode: decideOnAWhim }">
+      ${game.title}
+    </li>  
+  </ul>
+
+  <h4>Presidents</h4>
+  <input type="search" placeholder="Filter by Name" value.bind="name | split: ' ' & debounce: 200" />
+  <button click.delegate="strict = !strict">Mode: ${strict ? 'ALL' : 'ANY'}</button>
+  <input type="number" placeholder="From Year" min="1788" value.bind="from | dateFromYear & debounce: 200" />
+  <input type="number" placeholder="To Year" min="1788" value.bind="until | dateFromYear & debounce: 200" />
+  <ul>
+    <li repeat.for="pres of presidents 
+        | filter: { on: 'end', value: from, mode: '>=' }
+        | filter: { on: 'start', value: until, mode: '<' }
+        | filter: { on: ['first','last'], value: name, strict: strict }">
+      ${pres.first} ${pres.last}
+    </li>
+  </ul>
+</template>

@@ -1,0 +1,1 @@
+module.exports = require("npm:source-map-resolve@0.5.1/source-map-resolve.js");

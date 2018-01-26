@@ -1,0 +1,1 @@
+module.exports = require("npm:systemjs@0.19.46/index");

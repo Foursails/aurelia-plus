@@ -1,0 +1,1 @@
+module.exports = require("npm:semver@5.4.1/semver.js");

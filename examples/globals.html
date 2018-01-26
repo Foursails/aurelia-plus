@@ -1,0 +1,23 @@
+<template>
+  <div>
+    <strong>Object / Reflect</strong>
+    
+  </div>
+
+  <div>
+    <strong>Array</strong>
+    <ul if.bind="Array.isArray(arr)">
+      <li repeat.for="item of arr">${item}</li>
+    </ul>
+  </div>
+  
+  <div>
+    <strong>Math / Number</strong>
+    <p>cos(π/2) = ${Math.cos(Math.PI / 2)} <span if.bind="Math.cos(Math.PI / 2) < Number.EPSILON">≅ 0</span></p>
+  </div>
+  
+  <div>
+    <strong>RegExp</strong>
+    <p if.bind="RegExp('good').test(str)">This is good.</p>
+  </div>
+</template>

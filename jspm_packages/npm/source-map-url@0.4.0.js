@@ -1,0 +1,1 @@
+module.exports = require("npm:source-map-url@0.4.0/source-map-url.js");

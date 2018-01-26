@@ -1,0 +1,1 @@
+module.exports = require("npm:err-code@1.1.2/index.js");

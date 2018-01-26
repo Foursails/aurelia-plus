@@ -1,0 +1,1 @@
+module.exports = require("npm:extglob@2.0.4/index.js");

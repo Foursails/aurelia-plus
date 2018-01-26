@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ site.title }}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://gist.githubusercontent.com/demisx/025698a7b5e314a7a4b5/raw/d2086c7f59105db4da1ed8d1df8d8586666f66ea/syntax.css" />
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body aurelia-app="main">
+    
+    <header>
+      <h1 class="display-1">{{ site.title }}</h1>
+      <p class="lead">{{ site.description }}</p>
+      <div>
+        <a class="btn btn-outline-info" href="https://github.com/foursails/aurelia-plus">View on Github</a>
+        <a class="btn btn-outline-success" href="https://cash.me/$davismj/25">Buy License</a>
+      </div>
+    </header>
+
+    <main class="container ">
+      {{ content }}
+    </main>
+    <script src="jspm_packages/system.js"></script>
+    <script src="config.js"></script>
+    <script>System.import('aurelia-bootstrapper');</script>
+  </body>
+</html>

@@ -1,0 +1,1 @@
+module.exports = require("npm:snapdragon@0.8.1/index.js");

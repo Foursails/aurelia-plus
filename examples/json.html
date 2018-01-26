@@ -1,0 +1,11 @@
+<template>
+  <div repeat.for="state of states">
+    <strong>${state.name}</strong>
+    <pre>${state | json}</pre>
+  </div>
+  
+  <div>
+    <strong>States</strong>
+    <pre>${states | json:true}</pre>
+  </div>
+</template>
