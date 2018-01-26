@@ -1,6 +1,6 @@
 {
   "name": "aurelia-plus",
-  "version": "0.2.1-beta",
+  "version": "0.3.0",
   "description": "Aurelia Plus is a collection of common use case tools for use in Aurelia applications.",
   "main": "dist/index.js",
   "directories": {
@@ -38,7 +38,7 @@
   "jspm": {
     "main": "index.js",
     "directories": {
-      "lib": "dist"s
+      "lib": "dist"
     }
   }
 }
