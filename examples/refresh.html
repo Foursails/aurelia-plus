@@ -1,20 +1,22 @@
 <template>
-  <h2>Observe properties of arrays of objects</h2>
+  <div class="mb-3">
+    <div class="mb-1" repeat.for="point of points">
+      <strong>x${$index+1}</strong>
+      <input type="number" value.bind="point.x" />
+      <strong>y${$index+1}</strong>
+      <input type="number" value.bind="point.y" />
+    </div>
+  </div>
   <div>
-    <b>60 fps</b>
+    <strong>60 fps</strong>
     <pre>${points | json & refresh: 16}</pre>
   </div>
   <div>
-    <b>10 fps (default):</b>
+    <strong>10 fps (default):</strong>
     <pre>${points | json & refresh}</pre>
   </div>
   <div>
-    <b>5 fps:</b>
+    <strong>5 fps:</strong>
     <pre>${points | json & refresh:200}</pre>
-  </div>
-  <br />
-  <div repeat.for="point of points">
-    x${$index+1} <input type="number" value.bind="point.x" />
-    y${$index+1} <input type="number" value.bind="point.y" />
   </div>
 </template>
