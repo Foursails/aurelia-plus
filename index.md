@@ -5,8 +5,8 @@ layout: default
 
 - [Upload Custom Element](#upload-custom-element)
 - [Number Value Converter](#number-value-converter)
-- [Type="number" Custom Attribute](#type="number"-custom-attribute)
-- [Date/Time Value Converters](#date/time-value-converters)
+- [Type="number" Custom Attribute](#typenumber-custom-attribute)
+- [Date/Time Value Converters](#datetime-value-converters)
 - [Filter Value Converter](#filter-value-converter)
 - [JSON Value Converter](#json-value-converter)
 - [Split Value Converter](#split-value-converter)
@@ -96,7 +96,7 @@ The native html `<input type="file" />` element looks like a button, but it has 
     </div>
     <div show.bind="uploadSelectedTab === 1">
       {% capture upload-html %}{% include_relative examples/upload.html %}{% endcapture %}
-      {% highlight html %}{{ upload-html | replace: "${$", "\${$" }}{% endhighlight %}
+      {% highlight html %}{{ upload-html | replace: "${", "\${" }}{% endhighlight %}
     </div>
   </div>
 </section>
@@ -127,7 +127,7 @@ By default, the browser stores all input values as text, and so that's what Aure
     </div>
     <div show.bind="numberSelectedTab === 1">
       {% capture number-html %}{% include_relative examples/number.html %}{% endcapture %}
-      {% highlight html %}{{ number-html | replace: "${$", "\${$" }}{% endhighlight %}
+      {% highlight html %}{{ number-html | replace: "${", "\${" }}{% endhighlight %}
     </div>
     <div show.bind="numberSelectedTab === 2">
       {% highlight javascript %}{% include_relative examples/number.js %}{% endhighlight %}
@@ -161,7 +161,7 @@ Whenever you're using `<input type="number" />`, you're likely going to want to 
     </div>
     <div show.bind="number2SelectedTab === 1">
       {% capture number2-html %}{% include_relative examples/number2.html %}{% endcapture %}
-      {% highlight html %}{{ number2-html | replace: "${$", "\${$" }}{% endhighlight %}
+      {% highlight html %}{{ number2-html | replace: "${", "\${" }}{% endhighlight %}
     </div>
     <div show.bind="number2SelectedTab === 2">
       {% highlight javascript %}{% include_relative examples/number2.js %}{% endhighlight %}
@@ -203,7 +203,7 @@ The date/time value converters render JavaScript `Date` objects in your view usi
     </div>
     <div show.bind="dateSelectedTab === 1">
       {% capture date-html %}{% include_relative examples/date.html %}{% endcapture %}
-      {% highlight html %}{{ date-html | replace: "${$", "\${$" }}{% endhighlight %}
+      {% highlight html %}{{ date-html | replace: "${", "\${" }}{% endhighlight %}
     </div>
     <div show.bind="dateSelectedTab === 2">
       {% highlight javascript %}{% include_relative examples/date.js %}{% endhighlight %}
@@ -257,7 +257,7 @@ Full documentation: https://github.com/Foursails/bouncer/blob/master/README.md
     <div show.bind="filterSelectedTab === 1">
       <pre>
         {% capture filter-html %{% include_relative examples/filter.html %}{% endcapture %}}
-      {% highlight html %}{{ filter-html | replace: "${$", "\${$" }}{% endhighlight %}
+        {% highlight html %}{{ filter-html | replace: "${", "\${" }}{% endhighlight %}
     </pre>
     </div>
     <div show.bind="filterSelectedTab === 2">
@@ -296,7 +296,7 @@ The JSON value converter wraps the `JSON.stringify` function to render an object
     </div>
     <div show.bind="jsonSelectedTab === 1">
       {% capture json-html %}{% include_relative examples/json.html %}{% endcapture %}
-      {% highlight html %}{{ json-html | replace: "${$", "\${$" }}{% endhighlight %}
+      {% highlight html %}{{ json-html | replace: "${", "\${" }}{% endhighlight %}
     </div>
     <div show.bind="jsonSelectedTab === 2">
       {% highlight javascript %}{% include_relative examples/json.js %}{% endhighlight %}
@@ -334,7 +334,7 @@ The split value converter is a two way value converter that splits text from the
     </div>
     <div show.bind="splitSelectedTab === 1">
       {% capture split-html %}{% include_relative examples/split.html %}{% endcapture %}
-      {% highlight html %}{{ split-html | replace: "${$", "\${$" }}{% endhighlight %}
+      {% highlight html %}{{ split-html | replace: "${", "\${" }}{% endhighlight %}
     </div>
     <div show.bind="splitSelectedTab === 2">
       {% highlight javascript %}{% include_relative examples/split.js %}{% endhighlight %}
@@ -368,7 +368,7 @@ Have you ever found yourself trying to `JSON.stringify` in your view? AU+ adds t
     </div>
     <div show.bind="globalsSelectedTab === 1">
       {% capture globals-html %}%}{% include_relative examples/globals.html %}{% endcapture %}
-      {% highlight html %}{{ globals-html | replace: "${$", "\${$" }}{% endhighlight %}
+      {% highlight html %}{{ globals-html | replace: "${", "\${" }}{% endhighlight %}
     </div>
     <div show.bind="globalsSelectedTab === 2">
       {% highlight javascript %}{% include_relative examples/globals.js %}{% endhighlight %}
