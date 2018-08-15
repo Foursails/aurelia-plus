@@ -256,7 +256,7 @@ Full documentation: https://github.com/Foursails/bouncer/blob/master/README.md
     </div>
     <div show.bind="filterSelectedTab === 1">
       <pre>
-        {% capture filter-html %{% include_relative examples/filter.html %}{% endcapture %}}
+        {% capture filter-html %}{% include_relative examples/filter.html %}{% endcapture %}
         {% highlight html %}{{ filter-html | replace: "${", "\${" }}{% endhighlight %}
     </pre>
     </div>
@@ -367,7 +367,7 @@ Have you ever found yourself trying to `JSON.stringify` in your view? AU+ adds t
       <compose view-model="examples/globals"></compose>
     </div>
     <div show.bind="globalsSelectedTab === 1">
-      {% capture globals-html %}%}{% include_relative examples/globals.html %}{% endcapture %}
+      {% capture globals-html %}{% include_relative examples/globals.html %}{% endcapture %}
       {% highlight html %}{{ globals-html | replace: "${", "\${" }}{% endhighlight %}
     </div>
     <div show.bind="globalsSelectedTab === 2">
