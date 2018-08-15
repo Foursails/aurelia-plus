@@ -256,7 +256,7 @@ Full documentation: https://github.com/Foursails/bouncer/blob/master/README.md
     </div>
     <div show.bind="filterSelectedTab === 1">
       <pre>
-        {% capture filter-html %}{% include_relative examples/filter.html %}{% endcapture %}}
+        {% capture filter-html %}{% include_relative examples/filter.html %}{% endcapture %}
         {% highlight html %}{{ filter-html | replace: "${", "\${" }}{% endhighlight %}
     </pre>
     </div>
